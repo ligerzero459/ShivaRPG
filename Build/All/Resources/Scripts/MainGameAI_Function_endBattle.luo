@@ -1,0 +1,18 @@
+
+
+
+
+
+
+
+function MainGameAI.endBattle()
+
+
+if(this.fromScene()=='Field')then
+this.postStateChange(0,"FieldState")
+elseif(this.fromScene()=='Forest')then
+this.postStateChange(0,"ForestState")
+end
+
+
+end

@@ -1,0 +1,14 @@
+
+
+
+
+
+
+
+function PlayerAI.onInit()
+
+
+this.hPlayer(this.getObject())
+
+
+end

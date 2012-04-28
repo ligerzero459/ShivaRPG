@@ -1,0 +1,49 @@
+
+
+
+
+
+
+
+function PlayerAI.executeMagic(spell)
+
+
+
+local hTargetArrow=application.getCurrentUserSceneTaggedObject('TargetArrow')
+local currentTarget=object.getAIVariable(hTargetArrow,"TargetAI","currentTarget")
+
+local targetTag='Enemy'..math.roundToNearestInteger(currentTarget)
+
+local hTarget=application.getCurrentUserSceneTaggedObject(targetTag)
+
+
+
+
+local magicStrength=hashtable.get(this.statsTable(),"Int")
+
+
+local intModifier=0
+local damage=0
+
+
+if spell=='Fire'then
+damage=this.diceRoll(1,6)+intModifier
+elseif spell=='Blizzard'then
+damage=this.diceRoll(1,6)+intModifier
+elseif spell=='Thunder'then
+damage=this.diceRoll(1,6)+intModifier
+end
+
+local hitPercentage=math.roundToNearestInteger(math.random(0,100))
+
+if(hitPercentage>50)then
+object.sendEventImmediate(hTarget,"EnemyAI","onAttacked",damage,targetTag)
+log.message("Successful "..spell.." attack!")
+else
+log.message(spell.." spell missed!")
+end
+
+hashtable.set(this.statsTable(),"AttackTime",system.getTimeOfDay())
+
+
+end

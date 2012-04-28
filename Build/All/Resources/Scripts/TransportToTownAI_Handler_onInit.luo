@@ -1,0 +1,14 @@
+
+
+
+
+
+
+
+function TransportToTownAI.onInit()
+
+
+this.tDoor(this.getObject())
+
+
+end

@@ -1,0 +1,23 @@
+--------------------------------------------------------------------------------
+--  State............ : CanyonState
+--  Author........... : 
+--  Description...... : 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+function MainGameAI.CanyonState_onEnter ( )
+--------------------------------------------------------------------------------
+	
+	if this.fromScene ( ) == 'Field' then
+        this.hPlayer ( this.addPlayerModel ( 53.180, 1.174, 0.589, 90 ) )
+        this.hPlayerCamera ( this.addPlayerCam (  ))
+        application.setCurrentUserActiveCamera ( this.hPlayerCamera ( ) )
+    elseif this.fromScene ( ) == 'Battle' then
+        this.hPlayer ( this.addPlayerModel ( this.playerLastX ( ), this.playerLastY ( ), this.playerLastZ ( ), this.playerLastRotation ( ) ) )
+        this.hPlayerCamera ( this.addPlayerCam (  ))
+        application.setCurrentUserActiveCamera ( this.hPlayerCamera ( ) )
+    end
+	
+--------------------------------------------------------------------------------
+end
+--------------------------------------------------------------------------------

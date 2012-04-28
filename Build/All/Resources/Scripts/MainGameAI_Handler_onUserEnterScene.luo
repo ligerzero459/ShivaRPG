@@ -1,0 +1,30 @@
+
+
+
+
+
+
+
+function MainGameAI.onUserEnterScene(nUserID)
+
+
+if this.firstRun()==true then
+local sceneName=application.getCurrentUserSceneName()
+if sceneName=='MainScene'then
+object.setAIVariable(this.hPlayer(),"PlayerAI","playerX",-11.008)
+object.setAIVariable(this.hPlayer(),"PlayerAI","playerY",0.5)
+object.setAIVariable(this.hPlayer(),"PlayerAI","playerZ",-21.070)
+object.setAIVariable(this.hPlayer(),"PlayerAI","playerRotation",0.0)
+end
+if sceneName=='AberTown'then
+object.setAIVariable(this.hPlayer(),"PlayerAI","playerX",44.446)
+object.setAIVariable(this.hPlayer(),"PlayerAI","playerY",0.5)
+object.setAIVariable(this.hPlayer(),"PlayerAI","playerZ",0.0)
+object.setAIVariable(this.hPlayer(),"PlayerAI","playerRotation",0.0)
+end
+object.setAIVariable(this.hPlayer(),"PlayerAI","hSceneChanged",true)
+
+end
+
+
+end

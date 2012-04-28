@@ -1,0 +1,14 @@
+
+
+
+
+
+
+
+function EnemyAI.Battle_onEnter()
+
+
+this.bAttackTime(system.getTimeOfDay())
+
+
+end

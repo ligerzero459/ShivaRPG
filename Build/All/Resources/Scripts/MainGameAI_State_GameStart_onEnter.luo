@@ -1,0 +1,19 @@
+
+
+
+
+
+
+
+function MainGameAI.GameStart_onEnter()
+
+
+math.resetRandomSeed(system.getTimeOfDay())
+this.hPlayer(this.addPlayerModel(-6.260,1.154,-23.948,-128.007))
+this.hPlayerCamera(this.addPlayerCam())
+application.setCurrentUserActiveCamera(this.hPlayerCamera())
+
+this.hMyXML(xml.receive(this.hMyXML(),"file://temp.xml"))
+
+
+end

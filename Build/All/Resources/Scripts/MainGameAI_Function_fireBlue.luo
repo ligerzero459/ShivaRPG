@@ -1,0 +1,16 @@
+
+
+
+
+
+
+
+function MainGameAI.fireBlue()
+
+
+sfx.startAllParticleEmitters(this.blueF())
+this.delay_s(1.5)
+sfx.pauseAllParticleEmitters(this.blueF())
+
+
+end

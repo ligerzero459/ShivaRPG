@@ -1,0 +1,15 @@
+
+
+
+
+
+
+
+function MainGameAI.RandomEncounter()
+
+
+local encounterPercentage=math.random(0,15)
+this.pEncounter(this.pEncounter()+encounterPercentage)
+
+
+end

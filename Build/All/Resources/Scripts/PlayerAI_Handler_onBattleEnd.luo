@@ -1,0 +1,14 @@
+
+
+
+
+
+
+
+function PlayerAI.onBattleEnd()
+
+
+this.postStateChange(0,"Idle")
+
+
+end

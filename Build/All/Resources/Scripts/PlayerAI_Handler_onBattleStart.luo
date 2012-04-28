@@ -1,0 +1,15 @@
+
+
+
+
+
+
+
+function PlayerAI.onBattleStart()
+
+
+hashtable.set(this.statsTable(),"AttackTime",system.getTimeOfDay())
+this.bHP(hashtable.get(this.statsTable(),"CHP"))
+
+
+end

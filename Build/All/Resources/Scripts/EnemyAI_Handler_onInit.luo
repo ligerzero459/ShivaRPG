@@ -1,0 +1,14 @@
+
+
+
+
+
+
+
+function EnemyAI.onInit()
+
+
+this.hEnemy(this.getObject())
+
+
+end

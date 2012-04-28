@@ -1,0 +1,14 @@
+
+
+
+
+
+
+
+function TargetAI.onInit()
+
+
+this.targetArrow(this.getObject())
+
+
+end

@@ -1,0 +1,23 @@
+--------------------------------------------------------------------------------
+--  Handler.......... : onKeyboardKeyDown
+--  Author........... : 
+--  Description...... : 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+function PlayerAI.onKeyboardKeyDown ( kKeyCode )
+--------------------------------------------------------------------------------
+	
+    local hUser = application.getCurrentUser ( )
+    
+    if ( user.getAIState ( hUser, "MainGameAI" ) ~= "BattleState" and user.getAIState ( hUser, "MainGameAI" ) ~= "BattleStateForced" ) then
+        this.movement ( kKeyCode )
+    elseif ( user.getAIState ( hUser, "MainGameAI" ) == "BattleState" ) then
+        this.battleCommands ( kKeyCode )
+    elseif ( user.getAIState ( hUser, "MainGameAI" ) == "BattleStateForced" ) then
+        this.battleCommands ( kKeyCode )
+    end
+	
+--------------------------------------------------------------------------------
+end
+--------------------------------------------------------------------------------

@@ -1,0 +1,46 @@
+
+
+
+
+
+
+
+function MainGameAI.GameStart_onLoop()
+
+
+local nXMLStatus=xml.getReceiveStatus(this.hMyXML())
+if(nXMLStatus==-3)
+then
+log.warning("XML parse failed.")
+
+
+this.FieldState()
+
+elseif(nXMLStatus==-2)
+then
+log.warning("XML not found.")
+
+
+this.FieldState()
+
+elseif(nXMLStatus==-1)
+then
+log.warning("XML not in cache.")
+
+this.hMyXML(xml.receive(this.hMyXML(),"file://temp.xml"))
+
+elseif(nXMLStatus==1)
+then
+log.message("XML completed.")
+log.message(xml.toString(xml.getRootElement(this.hMyXML())))
+
+
+this.parceXML()
+
+
+this.FieldState()
+end
+
+
+
+end

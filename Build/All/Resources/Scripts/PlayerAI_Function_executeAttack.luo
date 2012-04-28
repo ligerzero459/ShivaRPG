@@ -1,0 +1,42 @@
+
+
+
+
+
+
+
+function PlayerAI.executeAttack()
+
+
+
+local hTargetArrow=application.getCurrentUserSceneTaggedObject('TargetArrow')
+local currentTarget=object.getAIVariable(hTargetArrow,"TargetAI","currentTarget")
+
+local targetTag='Enemy'..math.roundToNearestInteger(currentTarget)
+
+local hTarget=application.getCurrentUserSceneTaggedObject(targetTag)
+
+
+
+local attackStrength=hashtable.get(this.statsTable(),"Str")
+
+local strengthModifier=0
+
+
+local damage=this.diceRoll(2,10)+strengthModifier
+
+
+
+local hitPercentage=math.roundToNearestInteger(math.random(0,100))
+
+if(hitPercentage>50)then
+object.sendEventImmediate(hTarget,"EnemyAI","onAttacked",damage,targetTag)
+log.message("Successful attack!")
+else
+log.message("You missed!")
+end
+
+hashtable.set(this.statsTable(),"AttackTime",system.getTimeOfDay())
+
+
+end

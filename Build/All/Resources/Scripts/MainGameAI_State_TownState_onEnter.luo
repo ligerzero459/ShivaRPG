@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+function MainGameAI.TownState_onEnter()
+
+
+this.addPlayerModel(44.446,0.5,0.0,0.0)
+this.hPlayerCamera(this.addPlayerCam())
+this.hPlayer(application.getCurrentUserSceneTaggedObject('player'))
+application.setCurrentUserActiveCamera(this.hPlayerCamera())
+
+
+end

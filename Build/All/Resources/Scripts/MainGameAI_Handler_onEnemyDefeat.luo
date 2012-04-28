@@ -1,0 +1,20 @@
+
+
+
+
+
+
+
+function MainGameAI.onEnemyDefeat(tag,exp)
+
+
+this.hNumEnemies(this.hNumEnemies()-1)
+log.message(tag.." defeated! "..exp.." EXP awarded!")
+
+local cEXP=hashtable.get(this.playerStats(),'EXP')
+cEXP=cEXP+exp
+
+
+
+
+end

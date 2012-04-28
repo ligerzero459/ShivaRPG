@@ -1,0 +1,15 @@
+
+
+
+
+
+
+
+function PlayerAI.Battle_onEnter()
+
+
+
+hashtable.set(this.statsTable(),"AttackTime",system.getTimeOfDay())
+
+
+end

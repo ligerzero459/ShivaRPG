@@ -1,0 +1,15 @@
+
+
+
+
+
+
+
+function MainGameAI.onPlayerDefeat()
+
+
+log.message("You were defeated!")
+this.endBattle()
+
+
+end

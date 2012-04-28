@@ -1,0 +1,29 @@
+--------------------------------------------------------------------------------
+--  State............ : FieldState
+--  Author........... : 
+--  Description...... : 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+function MainGameAI.FieldState_onLeave ( )
+--------------------------------------------------------------------------------
+    
+    if ( this.toScene ( ) == 'Battle' ) then
+        local x, y, z = object.getTranslation ( this.hPlayer ( ), object.kGlobalSpace )
+        local rotationX, rotationY, rotationZ = object.getRotation ( this.hPlayer ( ), object.kGlobalSpace )
+        this.playerLastX ( x )
+        this.playerLastY ( y )
+        this.playerLastZ ( z )
+        this.playerLastRotation ( rotationY )
+        application.setCurrentUserScene ( this.chooseBattleScene ( ) )
+    elseif ( this.toScene ( ) == 'Town' ) then
+        application.setCurrentUserScene ( 'AberTown' )
+    elseif ( this.toScene ( ) == 'Forest' ) then
+        application.setCurrentUserScene ( 'ForestRemake' )
+    end
+    
+    this.fromScene ( 'Field' )
+	
+--------------------------------------------------------------------------------
+end
+--------------------------------------------------------------------------------

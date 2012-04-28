@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+function MainGameAI.TownState_onLeave()
+
+
+if(this.toScene()=='Field')then
+application.setCurrentUserScene('Overworld')
+end
+this.fromScene('Town')
+
+
+end

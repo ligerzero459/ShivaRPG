@@ -1,0 +1,16 @@
+
+
+
+
+
+
+
+function MainGameAI.delay_s(delay)
+
+
+delay=delay or 1
+local time_to=system.getTimeOfDay()+delay
+while system.getTimeOfDay()<time_to do end
+
+
+end

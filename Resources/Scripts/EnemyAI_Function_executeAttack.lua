@@ -1,0 +1,22 @@
+--------------------------------------------------------------------------------
+--  Function......... : executeAttack
+--  Author........... : 
+--  Description...... : 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+function EnemyAI.executeAttack ( )
+--------------------------------------------------------------------------------
+	
+	local hPlayer = application.getCurrentUserSceneTaggedObject ( 'player' )
+    
+    local hitPercentage = math.roundToNearestInteger ( math.random ( 0, 100 ) )
+    local attack = this.diceRoll( this.bRolls ( ), this.bSides ( ) )
+    
+    if ( hitPercentage > 80 ) then
+        object.sendEventImmediate ( hPlayer, "PlayerAI", "onAttacked", this.bStr ( ) )
+    end
+	
+--------------------------------------------------------------------------------
+end
+--------------------------------------------------------------------------------

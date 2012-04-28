@@ -1,0 +1,14 @@
+
+
+
+
+
+
+
+function MainGameAI.onBattleStart(totalEnemies)
+
+
+this.hNumEnemies(totalEnemies)
+
+
+end
